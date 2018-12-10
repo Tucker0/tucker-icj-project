@@ -1,10 +1,20 @@
-{% extends '_layouts/detail.njk' %}
+{% extends '_layouts/base.njk' %}
 
-{% block info %}
-  <p>Left column content</p>
-{% endblock %}
-
-{% block story %}
-  <h2>Undead: Right column content</h2>
-  <p>Zombie ipsum brains reversus ab cerebellum viral inferno, thalamus nam rick mend grimes malum cerveau cerebro.</p>
+{% block content %}
+<article class="container">
+  <div class="row">
+    <div class="col-sm-4 left-rail">
+      <img class="mr-3" src="assets/img/members/{{ members.image }}" style="width:300px;height:400px;" alt="Generic placeholder image">
+      <p> <h4> Tenure:</h4> {{members.tenure}} </p>
+      <p> <h4> Instruments: </h4>{{members.instruments}}</p>
+     <p><h4> Birth: </h4> {{ members.birthdate}} </p> <p> {{members.birthplace}}</p>
+    </div>
+    
+    <div class="col-sm-8">
+      <h1> {{ members.name }} </h1>
+     
+      {# <p>{{ members.text | safe}}</p> #}
+    </div>
+  </div>
+</article>
 {% endblock %}
